@@ -7,23 +7,23 @@ for i in range(0, n):
     arr.append(input())
 
 print("Array before sorting: ")
-for i in range(0, n):
+for i in range(0, n-1):
     print(arr[i] + " ", end='')
 
 def minnumber(arrlist):
     for i in range(0, n-1):
         minindex = i
        
-        for j in range(i+1, n):
-            if(arrlist[minindex] > arrlist[j]):
+        for j in range(i+1, len(arrlist)):
+            if(arrlist[j] < arrlist[minindex] ):
                 minindex = j
-                print("\n miniindex: {0} ".format(minindex))
-    
+                # print("\n miniindex: {0} ".format(minindex))
+        arrlist[i], arrlist[minindex] = arrlist[minindex], arrlist[i]
         # if(minindex != i):
-        print("items swaped: " + arrlist[i] + " " + arrlist[minindex])
-        temp = arrlist[i]
-        arrlist[i] = arrlist[minindex]
-        arrlist[minindex] = temp
+        # print("items swaped: " + arrlist[i] + " " + arrlist[minindex])
+        # temp = arrlist[i]
+        # arrlist[i] = arrlist[minindex]
+        # arrlist[minindex] = temp
             
         print("iteration: {0}".format(i+1))
         for j in range(0,n):
