@@ -14,7 +14,7 @@ def minnumber(arrlist):
     for i in range(0, n-1):
         minindex = i
        
-        for j in range(i+1, len(arrlist)):
+        for j in range(i+1, n):
             if(arrlist[j] < arrlist[minindex] ):
                 minindex = j
                 # print("\n miniindex: {0} ".format(minindex))
