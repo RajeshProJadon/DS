@@ -17,39 +17,40 @@ def quick(arrlist,size,beg,end,loc):
     #print("left:{0},Right:{1}, loc:{2}\n ".format(left, right, loc))
     while (arrlist[loc] <= arrlist[right]) and (loc != right):
         right = right - 1
+        if loc == right:
+            print("same1")
+            return
+            
+        if arrlist[loc] > arrlist[right] :
+            temp = arrlist[loc]
+            arrlist[loc] = arrlist[right]
+            arrlist[right] = temp
 
-    if loc == right:
-        print("same1")
-        
+            loc=right
+    
 
-    if arrlist[loc] > arrlist[right] :
-        temp = arrlist[loc]
-        arrlist[loc] = arrlist[right]
-        arrlist[right] = temp
-
-        loc=right
-
-    print("loc:{0}, left:{1}".format(loc,left))
+    # print("loc:{0}, left:{1}".format(loc,left))
     while (arrlist[left] <= arrlist[loc]) and (left != loc):
         left = left + 1
 
-    if loc == left:
-        print("same")
-        return
+        if loc == left:
+            print("same")
+            return
 
-    if (arrlist[left] > arrlist[loc]):
-        temp = arrlist[loc]
-        arrlist[loc] = arrlist[left]
-        arrlist[left] = temp
+        if (arrlist[left] > arrlist[loc]):
+            temp = arrlist[loc]
+            arrlist[loc] = arrlist[left]
+            arrlist[left] = temp
 
-        loc =left
+            loc =left
+   
 
 def quicksort(arrlist1):
     top = -1
     size = len(arrlist1)
     lower = [0] * size
     upper = [0] * size
-    loc1 = 1
+    loc1 = 0
     
     if size > 0:
         top = top +1
@@ -73,7 +74,7 @@ def quicksort(arrlist1):
 
         if (loc1+1 < end):
             top = top+1
-            lower[top] = loc1+1
+            lower[top] = loc1 + 1
             upper[top] = end
 
 
