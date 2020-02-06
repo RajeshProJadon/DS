@@ -12,21 +12,21 @@ for i in range(0, n):
 
 print("Applying insertion sort for sorting on array elements: ")
 
-def insertion_sort(arrList):
+def insertion_sort(arrlist):
     for i in range(1, n):
-        next_element = arrList[i]
+        next_element = arrlist[i]
         j = i
     
     # Compare the current element with the next element
 
-        while (arrList[j-1] > next_element) and (j > 0):
-            arrList[j] =arrList[j-1]
+        while (arrlist[j-1] > next_element) and (j > 0):
+            arrlist[j] =arrlist[j-1]
             j = j -1
-        arrList[j] = next_element
+        arrlist[j] = next_element
 
     print ("After sortinng array elements are: ", end='')
     for j in range(0,n):
-        print(arrList[j] + " ", end='')
+        print(arrlist[j] + " ", end='')
 
 
 insertion_sort(arr)
